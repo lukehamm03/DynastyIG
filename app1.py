@@ -1,15 +1,15 @@
 import pandas as pd
 import streamlit as st
+import random
 
 # Load the dataset
-file_path = "C:/Users/lukeh/Downloads/slothstatsdata.csv"
+file_path = "slothstatsdata.csv"
 data = pd.read_csv(file_path)
 
 # Extract unique team names
 team_names = data['teamName'].dropna().unique()
 
 # Select 6 teams randomly for the grid
-import random
 random_teams = random.sample(list(team_names), 6)
 
 # Create a dictionary of players and their associated teams
